@@ -30,12 +30,12 @@ html:
 
 ## 1 工具的使用教程等
 
-* [Linux](6_tools/linux/README.md)
-* [Markdown](6_tools/markdown/README.md)
-* [Git](6_tools/git/README.md)
-* [CMake](6_tools/cmake/README.md)
-- [QtCreator](6_tools/qt/QtCreator.md)
-- [VS Code](6_tools/ide/vs_code.md)
+* [Linux](READ.md)
+* [Markdown](READ.md)
+* [Git](READ.md)
+* [CMake](READ.md)
+- [QtCreator](READ.md)
+- [VS Code](READ.md)
 
 
 ## 2 参考资料：
@@ -52,3 +52,5 @@ html:
 
 # re03
 git、github练习03
+
+# [Home](index.html)

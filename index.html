@@ -12,6 +12,19 @@
 </head>
 <body>
     <h1>Welcome to my Website!</h1>
+  <div id="markdownContent"></div>
+  <script>
+    const markdownUrl = 'README.md';
+    const markdownContentDiv = document.getElementById('markdownContent');
+    fetch(markdownUrl)
+      .then(response => response.text())
+      .then(markdownText => {
+        const converter = new showdown.Converter();
+        const html = converter.makeHtml(markdownText);
+        markdownContentDiv.innerHTML = html;
+      });
+  </script>
+
     <p>This is a paragraph! Here's how you make a link: <a href="https://neocities.org">Neocities</a>.</p>
     <p>学习资源gitee001: <a href="https://gitee.com/pi-lab">飞行器智能感知与控制</a>.</p>    
     <p>Here's how you can make <strong>bold</strong> and <em>italic</em> text.</p>
@@ -25,22 +38,7 @@
     </ul>
     <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>    
 
-    <h1>学习资料</h1>
+    <h1><a href="README.html">README</a></h1>
     <ul><li><strong>学习资料Web001</strong> <a href="https://deepinout.com/html/html-questions/407_html_how_to_include_markdown_md_files_inside_html_files.html">HTML 如何在HTML文件中嵌入Markdown (.md)文件</a>.</li></ul>
-    <ul><li><strong>学习资料Web002</strong> <a href="https://blog.51cto.com/u_16308706/11779350">如何在HTML中显示Markdown格式的文本</a>.</li></ul>
-    <ul><li><strong>学习资料Web003</strong> <a href="https://blog.51cto.com/u_16308706/11779350">如何在HTML中显示Markdown格式的文本</a>.</li></ul>
-
-  <div id="markdownContent"></div>
-  <script>
-    const markdownUrl = 'README.md';
-    const markdownContentDiv = document.getElementById('markdownContent');
-    fetch(markdownUrl)
-      .then(response => response.text())
-      .then(markdownText => {
-        const converter = new showdown.Converter();
-        const html = converter.makeHtml(markdownText);
-        markdownContentDiv.innerHTML = html;
-      });
-  </script>
 </body>
 </html>
