@@ -8,6 +8,7 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 </head>
 <body>
     <h1>Welcome to my Website!</h1>
@@ -29,6 +30,17 @@
     <ul><li><strong>学习资料Web002</strong> <a href="https://blog.51cto.com/u_16308706/11779350">如何在HTML中显示Markdown格式的文本</a>.</li></ul>
     <ul><li><strong>学习资料Web003</strong> <a href="https://blog.51cto.com/u_16308706/11779350">如何在HTML中显示Markdown格式的文本</a>.</li></ul>
 
-
+  <div id="markdownContent"></div>
+  <script>
+    const markdownUrl = 'README.md';
+    const markdownContentDiv = document.getElementById('markdownContent');
+    fetch(markdownUrl)
+      .then(response => response.text())
+      .then(markdownText => {
+        const converter = new showdown.Converter();
+        const html = converter.makeHtml(markdownText);
+        markdownContentDiv.innerHTML = html;
+      });
+  </script>
 </body>
 </html>
